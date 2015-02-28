@@ -16,7 +16,7 @@ tfoot {
   font-weight: bold;
 }
 
-input, button {
+input, textarea, button {
   font-size: inherit;
 }
 
