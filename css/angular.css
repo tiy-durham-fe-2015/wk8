@@ -30,3 +30,12 @@ input, button {
   border: 1px solid red;
   padding: 1em;
 }
+
+/* Modal stuff */
+.modal {
+  border: 1px solid #CCC;
+  padding: 2em;
+  box-shadow: 0 0 1em #CCC;
+  max-width: 600px;
+  margin: auto;
+}

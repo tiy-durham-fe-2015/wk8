@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="DemoCtrl as vm">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Directives</title>
+
+    <link rel="stylesheet" href="../css/angular.css">
+  </head>
+  <body>
+
+    <main ng-cloak>
+
+      <button ng-repeat="user in vm.users" ng-click="vm.deleteUser(user)">Delete {{user.username}}</button>
+
+      <tiy-modal ng-if="vm.userToDelete" onclose="vm.cancelDelete">
+        <h1>Are you sure you want to delete {{vm.userToDelete.username}}?</h1>
+        <button ng-click="vm.confirmDelete()">Yes</button>
+        <button ng-click="vm.cancelDelete()">No</button>
+      </tiy-modal>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="demo-controller.js"></script>
+    <script src="tiy-modal.js"></script>
+
+  </body>
+</html>
