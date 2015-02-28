@@ -1,4 +1,4 @@
-<div class="img-preview"></div>
+<img ng-if="vm.imgSrc" class="img-preview" src="{{vm.imgSrc}}">
 <label class="img-label">
   <span class="img-label__text">{{vm.label}}</span>
   <input name="{{vm.name}}" class="img-selector" type="file">

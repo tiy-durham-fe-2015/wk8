@@ -4,7 +4,8 @@ app.directive('tiyModal', function () {
     restrict: 'E',
 
     // transclude specifies that we are going to allow
-    // inner content
+    // inner content (e.g. our directive will wrap
+    // some other content)
     transclude: true,
 
     scope: {
