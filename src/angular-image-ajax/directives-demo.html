@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="DemoCtrl as vm">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Img Preview</title>
+
+    <link rel="stylesheet" href="../css/angular.css">
+  </head>
+  <body>
+
+    <main ng-cloak>
+      <h1 ng-if="vm.message">{{vm.message}}</h1>
+      <img ng-if="vm.selectedImage.url" src="{{vm.selectedImage.url}}">
+      <form ng-submit="vm.uploadImage()">
+        <tiy-img-selector file="vm.selectedImage" name="demo-img"></tiy-img-selector>
+        <button>Submit</button>
+      </form>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="demo-controller.js"></script>
+    <script src="tiy-img-selector.js"></script>
+    <script src="img-service.js"></script>
+
+  </body>
+</html>
