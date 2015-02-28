@@ -10,7 +10,7 @@ app.controller('DemoCtrl', ['$http', '$scope', function ($http, $scope) {
   // Finally, WebSocket is a browser feature which should
   // definitely be hidden behind an angular factory so that
   // it is injected into the controller...
-  var exampleSocket = new WebSocket('ws://localhost:8080');
+  var socket = new WebSocket('ws://localhost:8080');
 
   self.username = '';
   self.chatMessage = '';
@@ -33,8 +33,12 @@ app.controller('DemoCtrl', ['$http', '$scope', function ($http, $scope) {
 
   self.messages = [];
 
-  exampleSocket.onmessage = function (event) {
+  // When the socket receives a message
+  socket.onmessage = function (event) {
+    // Tell Angular we're doing an update
     $scope.$apply(function () {
+      // Parse the socket data and add it to our
+      // messages array
       self.messages.push(JSON.parse(event.data));
     });
   };
