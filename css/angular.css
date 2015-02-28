@@ -61,4 +61,6 @@ input, button {
   box-shadow: 0 0 1em #CCC;
   max-width: 600px;
   margin: auto;
+  background: white;
+  color: #444;
 }
