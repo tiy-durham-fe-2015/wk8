@@ -20,10 +20,20 @@ input, button {
   font-size: inherit;
 }
 
+button {
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em;
+  background: #087fb2;
+  color: white;
+  border: none;
+}
+
 /* Image preview stuff */
 .img-label {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   overflow: hidden;
   padding: 1em;
   background: #087fb2;

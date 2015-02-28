@@ -3,7 +3,8 @@ app.directive('tiyImgSelector', function () {
     restrict: 'E',
 
     scope: {
-      label: '@'
+      label: '@',
+      name: '@'
     },
 
     templateUrl: 'tiy-img-selector.html',
@@ -11,6 +12,7 @@ app.directive('tiyImgSelector', function () {
     controller: ['$scope', function ($scope) {
       var self = this;
 
+      self.name = $scope.name;
       self.label = $scope.label;
     }],
 
@@ -29,7 +31,7 @@ app.directive('tiyImgSelector', function () {
         };
 
         reader.readAsDataURL(input.files[0]);
-        
+
       };
     }
   }

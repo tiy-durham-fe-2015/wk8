@@ -9,7 +9,11 @@
   <body>
 
     <main>
-      <tiy-img-selector label="Choose Image"></tiy-img-selector>
+      <form method="POST" action="/imgs" enctype="multipart/form-data">
+        <tiy-img-selector name="demo-img" label="Choose Image"></tiy-img-selector>
+        <button>Submit</button>
+      </form>
+
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
