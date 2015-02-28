@@ -1,0 +1,9 @@
+<div class="user-profile {{vm.cssClass}}">
+  <h2><a href="https://github.com/{{vm.user.github}}">{{ vm.user.name }}</a></h2>
+  <p ng-if="vm.extra">
+    {{vm.extra}}
+  </p>
+  <p>
+    Role: {{ vm.user.role }}
+  </p>
+</div>
