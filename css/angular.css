@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
   line-height: 1.4em;
+  padding: 2em;
 }
 
 h1 {
@@ -17,6 +18,28 @@ tfoot {
 
 input, button {
   font-size: inherit;
+}
+
+/* Image preview stuff */
+.img-label {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 1em;
+  background: #087fb2;
+  color: white;
+}
+
+.img-label__text {
+  position: relative;
+  z-index: 2;
+}
+
+.img-selector {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 0;
 }
 
 /*
