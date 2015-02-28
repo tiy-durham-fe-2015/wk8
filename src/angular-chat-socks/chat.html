@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="DemoCtrl as vm">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Chat Poll</title>
+
+    <link rel="stylesheet" href="../css/angular.css">
+  </head>
+  <body>
+
+    <main ng-cloak>
+      <form ng-submit="vm.sendMessage()">
+        <ul>
+          <li ng-repeat="msg in vm.messages">
+            {{msg.user | lowercase }}: {{msg.text}}
+          </li>
+        </ul>
+
+        <input ng-model="vm.username" placeholder="username">
+        <input ng-model="vm.chatMessage" placeholder="message">
+        <button>Send</button>
+
+      </form>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="demo-controller.js"></script>
+
+  </body>
+</html>
