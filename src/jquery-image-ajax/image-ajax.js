@@ -1,15 +1,24 @@
 $(function () {
 
+  $('.file-form').submit(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    ajaxUpload($(this));
+
+    return false;
+  });
+
   function ajaxUpload (form) {
     // Get the selected file
-    var imgSelector = $('input[type=file]', form),
-        file = imgSelector[0].files[0];
+    var imgSelector = $('input[type=file]', form);
+    var file = imgSelector[0].files[0];
 
     // Create a FormData object to represent the form
     // being posted (FormData is a built-in object).
     var formData = new FormData();
 
-    formData.append(imgSelector.attr('name'), file);
+    formData.append('demo-img', file);
 
     $.ajax({
       url: form.attr('action'), // The URL to post to
@@ -27,14 +36,5 @@ $(function () {
     });
 
   }
-
-  $('form').submit(function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    ajaxUpload($(this));
-
-    return false;
-  });
 
 });
