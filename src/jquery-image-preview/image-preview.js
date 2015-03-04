@@ -7,18 +7,22 @@ $(function () {
     //
     // Get a file reader which we'll use to load the image
     var reader = new FileReader();
+    var file = this.files[0];
 
     // When the reader has finished reading the file, it
     // will call this function and pass it the result of
     // the file-read operation.
     reader.onload = function (result) {
-      var img = $('<img />');
       // result.target.result is the data which was read
       // from the FileReader...
-      img.attr('src', result.target.result);
+      var img = $('<img class="img-thumbnail" />')
+        .attr('src', result.target.result);
 
-      $('.img-preview img').remove();
-      $('.img-preview').append(img);
+      var imgName = $('<span class="img-name"></span>')
+        .text(file.name);
+
+      $('.img-content').html(img).append(imgName);
+      $('.upload-button').removeAttr('disabled');
     };
 
     // Tell the reader to read the selected file, and
@@ -30,6 +34,6 @@ $(function () {
     // Basically, we are going to get the image content as
     // a base64-encoded string which can be directly assigned
     // to an img element's src attribute.
-    reader.readAsDataURL(this.files[0]);
+    reader.readAsDataURL(file);
   });
 });

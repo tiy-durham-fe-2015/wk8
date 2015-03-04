@@ -9,8 +9,20 @@
   <body>
 
     <main ng-cloak>
+      <hello-dir user="Tom"></hello-dir>
+      <hello-dir user="Paget"></hello-dir>
+
       <input ng-model="vm.instructor.name">
 
+      <!--
+        css-class="hilight" is passed into the directive as a literal string
+        whose value is 'hilight', because cssClass: '@'
+
+        user="vm.instructor" is not passed into the directive as a literal
+        string (e.g. user is not going to be 'vm.instructor') instead it is
+        used to look up the instructor property in our controller and pass
+        that value down into our directive. Because user: '=' in our directive.
+      -->
       <tiy-user-profile css-class="hilight" user="vm.instructor"></tiy-user-profile>
 
       <tiy-user-profile user="vm.ta"></tiy-user-profile>
@@ -23,6 +35,7 @@
     <script src="app.js"></script>
     <script src="demo-controller.js"></script>
     <script src="tiy-user-profile.js"></script>
+    <script src="hello-directive.js"></script>
 
   </body>
 </html>

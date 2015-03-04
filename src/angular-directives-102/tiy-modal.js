@@ -8,6 +8,13 @@ app.directive('tiyModal', function () {
     // some other content)
     transclude: true,
 
+    // If replace is true, then the <tiy-modal>... element in
+    // the calling HTML will be replaced with the HTML of our
+    // tiy-modal.html template. If replace is false (the default)
+    // then the <tiy-modal> element will simply contain/wrap
+    // the content of tiy-modal.html
+    replace: true,
+
     scope: {
       onclose: '='
     },
@@ -17,9 +24,7 @@ app.directive('tiyModal', function () {
     controller: ['$scope', function ($scope) {
       var self = this;
 
-      self.close = function () {
-        $scope.onclose();
-      };
+      self.close = $scope.onclose;
     }],
 
     controllerAs: 'vm',
@@ -27,6 +32,7 @@ app.directive('tiyModal', function () {
     link: function ($scope, element, attrs, ctrl) {
 
       function closeModal () {
+
         // This is how we tell Angular that we're about
         // to change something. Since this event comes from
         // a non-Angular source, we need to do this...
@@ -54,3 +60,20 @@ app.directive('tiyModal', function () {
     }
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

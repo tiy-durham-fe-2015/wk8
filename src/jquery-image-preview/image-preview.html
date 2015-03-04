@@ -3,17 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Image Preview</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/angular.css">
+    <meta name="viewport" content="width=device-width">
   </head>
-  <body>
-    <form method="POST" action="/imgs" enctype="multipart/form-data">
-      <div class="img-preview"></div>
+  <body class="file-demo">
+    <form class="main-content" method="POST" action="/imgs" enctype="multipart/form-data">
+      <h1>Image Demo</h1>
+
       <label class="img-label">
-        <span class="img-label__text">Choose File</span>
+        <span class="img-content">
+          <span class="img-label__text">Choose file...</span>
+        </span>
         <input name="demo-img" class="img-selector" type="file">
       </label>
 
-      <button>Submit</button>
+      <button class="upload-button" disabled>Upload file</button>
     </form>
 
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
