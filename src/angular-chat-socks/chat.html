@@ -9,6 +9,8 @@
   <body>
 
     <main ng-cloak>
+      <h1 ng-if="vm.status">{{vm.status}}</h1>
+      
       <form ng-submit="vm.sendMessage()">
         <ul>
           <li ng-repeat="msg in vm.messages">

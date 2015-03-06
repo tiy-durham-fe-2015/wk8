@@ -28,6 +28,8 @@ function addChat (req, res) {
   if (chats.length > 40) {
     chats.shift();
   }
+
+  res.json(chat);
 }
 
 function getChats (req, res) {
